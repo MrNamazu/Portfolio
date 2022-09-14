@@ -1,3 +1,1 @@
-# vitejs-vite-dnzxs2
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/vitejs-vite-dnzxs2)
+Font Used: https://www.dfonts.org/fonts/integral-cf-font/#google_vignette
