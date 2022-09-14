@@ -1,0 +1,30 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Montserrat';
+}
+html {
+  background: linear-gradient(
+    180deg,
+    rgba(182, 22, 22, 1) 0%,
+    rgba(213, 36, 36, 1) 28%,
+    rgb(8, 8, 8) 96%
+  );
+}
+body {
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0) 64%,
+    rgba(0, 0, 0, 0.7102242264093137) 100%
+  );
+}
+* {
+  box-sizing: border-box;
+}
+body > #app {
+  width: 100%;
+  height: 100%;
+}
