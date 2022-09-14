@@ -5,22 +5,16 @@ html {
   height: 100%;
   width: 100%;
   font-family: 'Montserrat';
+  color: #fff;
 }
-html {
-  background: linear-gradient(
-    180deg,
-    rgba(182, 22, 22, 1) 0%,
-    rgba(213, 36, 36, 1) 28%,
-    rgb(8, 8, 8) 96%
-  );
-}
-body {
+
+/* body {
   background: radial-gradient(
     circle,
     rgba(0, 0, 0, 0) 64%,
     rgba(0, 0, 0, 0.7102242264093137) 100%
   );
-}
+} */
 * {
   box-sizing: border-box;
 }

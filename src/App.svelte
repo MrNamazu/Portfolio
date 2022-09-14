@@ -2,6 +2,7 @@
   import Navigation from './lib/components/menu.svelte'
   import Logo from './lib/components/logo.svelte'
   import Noisebg from './lib/components/noisebg.svelte'
+  import Hero from './lib/components/hero.svelte'
   import AOS from 'aos';
   import 'aos/dist/aos.css';
 
@@ -17,10 +18,18 @@
       </div>
     </div>
     <div class="contentWrapper">
-      <div class="content"
-      data-aos="flip-up">
-        Lorem Ipsum
-      </div>
+      <Hero />
+      <div class="split" />
+        <ul class="footerNav">
+          <li><a href="/">Impressum</a></li>
+          <li><a href="/">Partner & Friends</a></li>
+          <li><a href="/">Twitter</a></li>
+          <li><a href="/">Discord</a></li>
+        </ul>
+      <div class="split" />
+      <p class="footerText">Web-development <span style="color: #FFF !important;">with love ♥</span></p>
+      <div class="split" />
+      <p class="footerText">© 2022 • PHILSTACK</p>
     </div>
   </div>
 </div>
@@ -48,7 +57,7 @@
 .header {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 70px;
   padding: 20px;
   z-index: 22;
 }
@@ -62,6 +71,9 @@
 }
 .contentWrapper {
   padding: 120px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .content {
   background-color: #FFF;
@@ -70,5 +82,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.split {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.3);
+}
+.footerText {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+  text-align: center;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+}
+.footerNav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footerNav li a {
+  color: #FFF;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 11px;
+  cursor: pointer;
 }
 </style>

@@ -2,13 +2,38 @@
 import { fly } from 'svelte/transition';
 import { flip } from 'svelte/animate';
 
-let menuOpen = true;
+  let menuOpen = false;
+  let scrollable = true;
+	
+	const wheel = (node, options) => {
+		let { scrollable } = options;
+		const handler = e => {
+			if (!scrollable) e.preventDefault();
+		};
+		node.addEventListener('wheel', handler, { passive: false });
+		return {
+			update(options) {
+				scrollable = options.scrollable;
+			},
+			destroy() {
+				node.removeEventListener('wheel', handler, { passive: false });
+			}
+		};
+  };
 
-const openMenu = () => {
-  menuOpen = !menuOpen;
-  AOS.refresh();
-}
+  const openMenu = () => {
+    const body = document.querySelector('body')
+    menuOpen = !menuOpen;
+    AOS.refresh();
+    if (!menuOpen) {
+      scrollable = false;
+    } else {
+      scrollable = true;
+    }
+  }
+
 </script>
+<svelte:window use:wheel={{scrollable}} />
 <style>
 .menuIcon {
   background-color: #000;
@@ -26,7 +51,7 @@ const openMenu = () => {
   z-index: 21;
 }
 nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -100,6 +125,7 @@ nav ul li a:hover {
       <a href="/">Impressum</a>
       <a href="/">Datenschutz</a>
     </div>
+    <div class="split" />
   </nav>
 
 {/if}

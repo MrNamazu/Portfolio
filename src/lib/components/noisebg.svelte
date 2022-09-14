@@ -2,11 +2,34 @@
 
 </script>
 
-<div class="noiseBG">
-asdasddddd
-</div>
+<div class="redBG"></div>
+<div class="blackBG"></div>
+<div class="noiseBG"></div>
 
 <style>
+.blackBG {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0) 64%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+.redBG {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(182, 22, 22, 1) 0%,
+    rgba(213, 36, 36, 1) 28%,
+    rgb(8, 8, 8) 96%
+  );
+}
   .noiseBG {
     z-index: 20;
     pointer-events: none;
