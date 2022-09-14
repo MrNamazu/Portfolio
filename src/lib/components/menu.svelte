@@ -4,36 +4,16 @@ import { flip } from 'svelte/animate';
 
   let menuOpen = false;
   let scrollable = true;
-	
-	const wheel = (node, options) => {
-		let { scrollable } = options;
-		const handler = e => {
-			if (!scrollable) e.preventDefault();
-		};
-		node.addEventListener('wheel', handler, { passive: false });
-		return {
-			update(options) {
-				scrollable = options.scrollable;
-			},
-			destroy() {
-				node.removeEventListener('wheel', handler, { passive: false });
-			}
-		};
-  };
 
   const openMenu = () => {
     const body = document.querySelector('body')
     menuOpen = !menuOpen;
     AOS.refresh();
-    if (!menuOpen) {
-      scrollable = false;
-    } else {
-      scrollable = true;
-    }
   }
 
+
 </script>
-<svelte:window use:wheel={{scrollable}} />
+
 <style>
 .menuIcon {
   background-color: #000;

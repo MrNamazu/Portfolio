@@ -7,8 +7,16 @@
   import 'aos/dist/aos.css';
 
   AOS.init();
+
+  let loading = true;
 </script>
 <Noisebg />
+{#if loading}
+<div class="loading">
+  <Logo />
+  <p>Loading...</p>
+</div>
+{:else}
 <div class="pageWrapper">
   <div class="pageContainer">
     <div class="header">
@@ -33,8 +41,16 @@
     </div>
   </div>
 </div>
-
+{/if}
 <style>
+.loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 @media (min-width: 800px) {
   .pageWrapper {
     width: 100%;
