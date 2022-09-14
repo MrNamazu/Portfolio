@@ -1,6 +1,7 @@
 <script>
   import Navigation from './lib/components/menu.svelte'
   import Logo from './lib/components/logo.svelte'
+  import Smalllogo from './lib/components/smallLogo.svelte'
   import Noisebg from './lib/components/noisebg.svelte'
   import Hero from './lib/components/hero.svelte'
   import AOS from 'aos';
@@ -13,7 +14,7 @@
 <Noisebg />
 {#if loading}
 <div class="loading">
-  <Logo />
+  <Smalllogo />
   <p>Loading...</p>
 </div>
 {:else}
