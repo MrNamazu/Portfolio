@@ -4,18 +4,36 @@
   import Smalllogo from './lib/components/smallLogo.svelte'
   import Noisebg from './lib/components/noisebg.svelte'
   import Hero from './lib/components/hero.svelte'
+  import Projects from './lib/components/projects.svelte'
+  import { Splide, SplideSlide } from '@splidejs/svelte-splide';
   import AOS from 'aos';
   import 'aos/dist/aos.css';
+  import '@splidejs/svelte-splide/css/sea-green';
 
   AOS.init();
 
-  let loading = true;
+  let loading = false;
+  let progress = 0;
+
+/*   const increaseProgress = async () => {
+		setInterval(() => {
+			if (progress === 100) {
+				loading = false;
+        return;
+			} else {
+				progress++;
+			}
+		}, 20);
+	};
+  increaseProgress(); */
+
 </script>
 <Noisebg />
 {#if loading}
 <div class="loading">
   <Smalllogo />
   <p>Loading...</p>
+  <p>{progress}</p>
 </div>
 {:else}
 <div class="pageWrapper">
@@ -28,6 +46,7 @@
     </div>
     <div class="contentWrapper">
       <Hero />
+      <Projects />
       <div class="split" />
         <ul class="footerNav">
           <li><a href="/">Impressum</a></li>
