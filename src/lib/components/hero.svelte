@@ -54,7 +54,7 @@ button:hover {
   <button>Contact me!</button>
 </div>
 <div class="right">
-bild
+bildd
 </div>
 
 </div>

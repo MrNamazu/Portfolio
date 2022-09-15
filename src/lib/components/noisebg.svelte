@@ -7,9 +7,11 @@
 <div class="blackBG"></div>
 <!-- <div class="testBG"></div> -->
 <div class="noiseBG"></div>
-
+<div class="bg"></div>
 <style>
-
+.bg {
+  background-color: black;
+}
 .blackBG {
   position: fixed;
   pointer-events: none;
